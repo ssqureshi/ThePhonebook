@@ -6,7 +6,12 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\"",
+    "build:ui": "rm -rf build && mkdir build && cd '../FullStackOpen/part2/The Phonebook' && npm run build && xcopy <'C:/Users/Saad/FullStackOpen/part2/The Phonebook/build/'> 'C:/Users/Saad/ThePhonebook/build/'",
+    "deploy": "flyctl deploy",
+    "deploy:full": "npm run build:ui && npm run deploy",
+    "logs:prod": "flyctl logs",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -19,10 +24,14 @@
   },
   "homepage": "https://github.com/ssqureshi/ThePhonebook#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "mongoose": "^6.8.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "eslint": "^8.29.0",
     "nodemon": "^2.0.20"
   }
 }

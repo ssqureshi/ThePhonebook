@@ -1,10 +1,30 @@
-DELETE http://localhost:3001/api/persons/1
+DELETE https://bold-cherry-3866.fly.dev/api/persons/1
 
 ###
-POST http://localhost:3001/api/persons
+POST https://bold-cherry-3866.fly.dev/api/persons
 Content-Type: application/json
 
 {
     "name": "x",
     "number": "1234"
+}
+
+###
+POST http://localhost:8080/api/persons
+Content-Type: application/json
+
+{
+    "name": "x",
+    "number": "1234"
+}   
+###
+DELETE http://localhost:8080/api/persons/6397e907d04acce83ed70d6e
+
+###
+PUT http://localhost:8080/api/persons/6397fbd4d3c8abd4cece54ef
+Content-Type: application/json
+
+{   
+    "name": "baz",
+    "number": "5555557777"
 }
